@@ -20,7 +20,8 @@ sed -i 's/#\ %wheel\ ALL=(ALL)\ ALL/%wheel\ ALL=(ALL)\ ALL/' /etc/sudoers
 useradd -m -G wheel -s /bin/bash user
 echo -e "cake\ncake" | passwd user
 #Adding the programs
-cat ipkg.txt | pacman -Sy --noconfirm -
+pacman -Sy --noconfirm --needed grub efibootmgr vim ufw clamav networkmanager xorg-server python pulseaudio dkms linux-headers 
+pacman -Sy --noconfirm --needed midori sddm plasma konsole evince wget rsync 
 systemctl enable NetworkManager.service
 systemctl enable sddm.service
 #Configuring security

@@ -1,1 +1,0 @@
-grub efibootmgr vim ufw clamav networkmanager midori sddm plasma konsole pulseaudio dkms  linux-headers wget rsync xorg-server python evince

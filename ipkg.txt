@@ -15,4 +15,5 @@ wget
 rsync
 xorg-server
 python
+evince
  
