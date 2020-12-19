@@ -21,14 +21,15 @@ useradd -m -G wheel -s /bin/bash user
 echo -e "cake\ncake" | passwd user
 #Adding the programs
 pacman -Sy grub efibootmgr vim networkmanager xorg-server xorg-xinit xfce4 rxvt-unicode evince --noconfirm
-systemctl enable NetworkManager.service 
-systemctl start NetworkManager.service
-if [ -d /homer/user ] && [ -a /etc/X11/xinit/xinitrc];  then
+systemctl enable NetworkManager.service
+if [[ -d /home/user  && -a /etc/X11/xinit/xinitrc ]];  then
 	cp /etc/X11/xinit/xinitrc /home/user/.xinitrc
 else
 	echo "Error finding home user or xinitrc"
 fi
-if [ -a /home/user/.xinitrc]; then
+
+
+if [ -a /home/user/.xinitrc ]; then
 	printf "exec xfce4" >> /home/user/.xinitrc
 else
 	echo "Failed to find xinitrc"
