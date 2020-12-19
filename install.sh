@@ -37,6 +37,5 @@ cp -r ./UltiSnips /home/user/.vim/UltiSnips
 #Setting up Brave
 mkdir -p /home/user/Packages/Brave 
 git clone https://aur.archlinux.org/brave.git /home/user/Packages/Brave
-(cd /home/user/Packages/Brave && makepkg -sic)
 echo "Finished"
 
