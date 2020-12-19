@@ -26,17 +26,13 @@ mkdir /home/user/Packages
 #Setting up Bash
 cp ./.bashrc /home/user/.bashrc
 cp ./.bash_profile /home/user/.bash_profile
-#Setting up Vim
-if [[ -d /home/user/.vim/ ]]; then
-	mkdir /home/user/.vim/bundle
-	git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
-else
-	mkdir -p /home/user/.vim/bundle
-	git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
 cp ./.vimrc /home/user/.vimrc
+#Setting up Vim
+mkdir -p /home/user/.vim/bundle
+git clone https://github.com/VundleVim/Vundle.vim.git home/user/.vim/bundle/Vundle.vim
 cp -r ./UltiSnips /home/user/.vim/UltiSnips
 #Setting up Brave
 mkdir -p /home/user/Packages/Brave
 git clone https://aur.archlinux.org/brave.git /home/user/Packages/Brave
-
+echo "Finished"
 
