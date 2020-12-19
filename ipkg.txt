@@ -10,7 +10,7 @@ plasma
 konsole
 pulseaudio
 dkms
-linux-headers,
+linux-headers
 wget
 rsync
 xorg-server
