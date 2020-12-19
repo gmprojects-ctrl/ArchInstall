@@ -20,19 +20,23 @@ sed -i 's/#\ %wheel\ ALL=(ALL)\ ALL/%wheel\ ALL=(ALL)\ ALL/' /etc/sudoers
 useradd -m -G wheel -s /bin/bash user
 echo -e "cake\ncake" | passwd user
 #Adding the programs
-pacman -Sy grub efibootmgr vim networkmanager alsa-utils xorg-server xorg-xinit xorg-xrandr wget rsync xfce4  --noconfirm
+pacman -Sy grub efibootmgr vim networkmanager sddm xfce4 pulseaudio dkms linux-headers wget rsync xorg-server python evince  --noconfirm
 systemctl enable NetworkManager.service
+systemctl enable sddm.service 
 mkdir /home/user/Packages
 #Setting up Bash
 cp ./.bashrc /home/user/.bashrc
 cp ./.bash_profile /home/user/.bash_profile
 cp ./.vimrc /home/user/.vimrc
+#Setting up other folders
+mkdir -p /home/user/Scripts
 #Setting up Vim
-mkdir -p /home/user/.vim/bundle
+mkdir -p /home/user/.vim
 git clone https://github.com/VundleVim/Vundle.vim.git home/user/.vim/bundle/Vundle.vim
 cp -r ./UltiSnips /home/user/.vim/UltiSnips
 #Setting up Brave
-mkdir -p /home/user/Packages/Brave
+mkdir -p /home/user/Packages/Brave 
 git clone https://aur.archlinux.org/brave.git /home/user/Packages/Brave
+(cd /home/user/Packages/Brave && makepkg -sic)
 echo "Finished"
 
