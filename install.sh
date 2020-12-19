@@ -23,8 +23,12 @@ echo -e "cake\ncake" | passwd user
 pacman -Sy --noconfirm --needed - < ipkg.txt
 systemctl enable NetworkManager.service
 systemctl enable sddm.service
+#Configuring security
+freshclam
 systemctl enable clamav-freshclam.service
+systemctl enable clamav-daemon.service
 systemctl enable ufw.service
+#Configuring Home folder
 mkdir /home/user/Packages
 #Setting up Bash
 cp ./.bashrc /home/user/.bashrc

@@ -7,7 +7,7 @@ networkmanager
 midori 
 sddm 
 plasma
-alacritty
+konsole
 pulseaudio 
 dkms 
 linux-headers 
