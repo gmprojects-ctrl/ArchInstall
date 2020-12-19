@@ -20,7 +20,7 @@ sed -i 's/#\ %wheel\ ALL=(ALL)\ ALL/%wheel\ ALL=(ALL)\ ALL/' /etc/sudoers
 useradd -m -G wheel -s /bin/bash user
 echo -e "cake\ncake" | passwd user
 #Adding the programs
-pacman -Sy grub efibootmgr vim networkmanager alsa-utils xorg-server xorg-xinit xorg-xrandr wget rsync   --noconfirm
+pacman -Sy grub efibootmgr vim networkmanager alsa-utils xorg-server xorg-xinit xorg-xrandr wget rsync xfce4  --noconfirm
 systemctl enable NetworkManager.service
 mkdir /home/user/Packages
 #Setting up Bash
