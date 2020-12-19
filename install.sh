@@ -1,4 +1,4 @@
-#!/bin/sh:
+#!/bin/sh
 #Arch Install script V.1 by the G-man
 #Note make sure base-devel and git are installedi
 #Variables
