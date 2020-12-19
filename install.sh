@@ -22,7 +22,6 @@ echo -e "cake\ncake" | passwd user
 #Adding the programs
 pacman -Sy grub efibootmgr vim networkmanager alsa-utils xorg-server xorg-xinit xorg-xrandr wget rsync   --noconfirm
 systemctl enable NetworkManager.service
-systemctl enable alsa-state.service
 mkdir /home/user/Packages
 #Setting up Bash
 cp ./.bashrc /home/user/.bashrc
