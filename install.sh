@@ -21,25 +21,25 @@ useradd -m -G wheel -s /bin/bash user
 echo -e "cake\ncake" | passwd user
 #Adding the programs
 pacman -Sy --noconfirm --needed grub efibootmgr vim ufw clamav networkmanager xorg-server python pulseaudio dkms linux-headers 
-pacman -Sy --noconfirm --needed midori sddm plasma konsole evince wget rsync 
+pacman -Sy --noconfirm --needed wget rsync htop cmatrix pulsemixer 
+#Configuring security and network
 systemctl enable NetworkManager.service
-systemctl enable sddm.service
-#Configuring security
 freshclam
 systemctl enable clamav-freshclam.service
 systemctl enable clamav-daemon.service
 systemctl enable ufw.service
 #Configuring Home folder
-mkdir /home/user/Packages
+mkdir -p /home/user/Packages/Active
+mkdir -p /home/user/Packages/Archive
+mkdir -p /home/user/Scripts
 #Setting up Bash
 cp ./.bashrc /home/user/.bashrc
 cp ./.bash_profile /home/user/.bash_profile
 cp ./.vimrc /home/user/.vimrc
-#Setting up other folders
-mkdir -p /home/user/Scripts
+#Setting up other programs
+(cd /home/user/Packages/Archive && git clone https://aur.archlinux.org/st.git )
 #Setting up Vim
 mkdir -p /home/user/.vim
-git clone https://github.com/VundleVim/Vundle.vim.git home/user/.vim/bundle/Vundle.vim
 cp -r ./UltiSnips /home/user/.vim/UltiSnips
 echo "Finished"
 
