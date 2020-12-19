@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/sh:
 #Arch Install script V.1 by the G-man
 #Note make sure base-devel and git are installedi
 #Variables
@@ -20,7 +20,7 @@ sed -i 's/#\ %wheel\ ALL=(ALL)\ ALL/%wheel\ ALL=(ALL)\ ALL/' /etc/sudoers
 useradd -m -G wheel -s /bin/bash user
 echo -e "cake\ncake" | passwd user
 #Adding the programs
-pacman -S - < ipkg.txt
+cat ipkg.txt | pacman -Sy --noconfirm -
 systemctl enable NetworkManager.service
 systemctl enable sddm.service
 #Configuring security
