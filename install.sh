@@ -20,7 +20,7 @@ sed -i 's/#\ %wheel\ ALL=(ALL)\ ALL/%wheel\ ALL=(ALL)\ ALL/' /etc/sudoers
 useradd -m -G wheel -s /bin/bash user
 echo -e "cake\ncake" | passwd user
 #Adding the programs
-pacman -S --noconfirm --needed - < ipkg.txt
+pacman -S - < ipkg.txt
 systemctl enable NetworkManager.service
 systemctl enable sddm.service
 #Configuring security
