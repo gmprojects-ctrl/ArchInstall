@@ -11,4 +11,7 @@ viewcsv(){ cat "$1" | column -t -s, | less -S; }
 cleanlatex(){ rm -r *.log *.aux ; }
 alias ls='ls --color=auto'
 alias trash='mv $* -t ~/Trash'
+alias daisy="ssh u2004840@daisy.warwick.ac.uk"
+alias vim="nvim"
+alias miv="tmux new-session nvim"
 PS1='[\u@\h \W]\$ '

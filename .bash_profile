@@ -1,8 +1,7 @@
 #
 # ~/.bash_profile
 #
-export EDITOR=vim
+export EDITOR=nvim
 export PATH=$PATH:~/Scripts
-#displayskull
-setxkbmap gb
+displayskull
 [[ -f ~/.bashrc ]] && . ~/.bashrc
