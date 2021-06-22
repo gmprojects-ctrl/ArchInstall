@@ -1,0 +1,9 @@
+#!/bin/sh
+#4chan script
+if [ $1 == "-g"  ]; then
+	brave --incognito https://www.4chan.org/g/
+elif [ $1 == "-biz"]; then
+	brave --incognito https://www.4chan.org/biz/
+else
+	echo "Error"
+fi

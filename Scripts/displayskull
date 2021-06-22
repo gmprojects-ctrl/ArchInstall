@@ -1,0 +1,10 @@
+#!/bin/bash
+input="/home/user/Scripts/text.txt"
+RED='\033[0;31m'
+WHITE='\033[0m'
+COLUMNS=$(tput cols) 
+while read -r line
+do
+  printf "$RED $line $WHITE \n"
+  sleep 0.1s
+done < "$input"

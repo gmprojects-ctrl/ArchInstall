@@ -1,0 +1,24 @@
+#!/bin/sh
+#Rememeber, the developer of this program has no liability in losing your stuff!
+#Use this with your own caution
+
+#Path to your local folder where ma117 is stored, replace it to suit your needs
+# Remember it should be Path/to/Folder/ma117/ not Path/to/Folder/ma117 
+DAISYPATH="/home/user/UniversityBackup/Year_1/Modules/MA117_Programming_For_Scientists/Lab_and_Testing/ma117/"
+#Username
+USERNAME="u2004840"
+#Userpath (Daisy's address)
+USERPATH="${USERNAME}@daisy.warwick.ac.uk:ma117/"
+if [[ $1 = "-h" ]]; then
+	printf "Type:\nsyncdaisy -u\tTo upload to Daisy\nsyncdaisy -d\tTo download from Daisy\nsyncdaisy -c\tTo connect to Daisy\nsyncdaisy -h\tFor help\n "
+
+elif [[ $1 = "-u" ]]; then
+	rsync -av $DAISYPATH $USERPATH --delete
+elif [[ $1 = "-d" ]]; then
+	rsync -av $USERPATH $DAISYPATH  --delete
+elif [[ $1 = "-c" ]]; then
+	ssh ${USERPATH%":ma117/"}
+else
+       printf "Error,option not recognised,type\nsyncdaisy -h\nFor help\n"
+fi
+
