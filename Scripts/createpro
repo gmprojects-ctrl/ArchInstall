@@ -1,0 +1,27 @@
+#!/bin/sh
+
+# Creates directories
+
+if [[ $1 == '-c' ]]; then
+	if [[ -n $2 ]]; then
+		mkdir $2
+		mkdir "$2/include" "$2/src" "$2/bin" "$2/lib"
+		touch "$2/src/Makefile"
+
+	else
+		echo "Please Give File Name"
+	fi
+
+elif [[ $1 == '-p' ]]; then
+	if [[ -n $2 ]]; then
+		python3 -m venv $2
+	else
+		echo "Please Give File Name"
+	fi
+
+
+
+
+else
+	echo "Unkown Command"
+fi
